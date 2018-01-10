@@ -170,7 +170,7 @@ func (a *LogstashAdapter) Stream(logstream chan *router.Message) {
 		data["docker"] = dockerInfo
 		data["stream"] = m.Source
 		data["tags"] = tags
-		data["timestamp"] = m.Time
+		data["received_at"] = m.Time
 
 		// Return the JSON encoding
 		if js, err = json.Marshal(data); err != nil {
